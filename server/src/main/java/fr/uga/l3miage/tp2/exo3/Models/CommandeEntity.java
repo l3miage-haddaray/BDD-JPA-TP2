@@ -5,7 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 
 public class CommandeEntity {
     @Id
@@ -17,5 +18,8 @@ public class CommandeEntity {
 
     @ManyToOne
     private ClientEntity client;
+
+    @OneToOne
+    private ProduitEntity produit;
 
 }

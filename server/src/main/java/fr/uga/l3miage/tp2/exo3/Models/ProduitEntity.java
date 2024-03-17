@@ -5,6 +5,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 
 public class ProduitEntity {
 
@@ -15,5 +17,8 @@ public class ProduitEntity {
 
     private double prix ;
     private int quantite ;
+
+    @OneToOne(mappedBy = "produit")
+    private CommandeEntity commande;
 
 }
