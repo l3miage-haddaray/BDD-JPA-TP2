@@ -1,10 +1,7 @@
 package fr.uga.l3miage.tp2.exo3.Models;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 public class CategorieDeProduitEntity {
 
@@ -12,4 +9,8 @@ public class CategorieDeProduitEntity {
     private long id ;
 
     private String nom ;
+
+
+    @OneToMany(mappedBy = "categorie")
+    private List<ProduitEntity> produits;
 }
